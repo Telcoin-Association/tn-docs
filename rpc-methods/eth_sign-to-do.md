@@ -1,0 +1,7 @@
+# eth\_sign (to do)
+
+NOT SUPPORTED BY INFURA
+
+The `eth_sign` JSON-RPC method is not supported because Infura doesn't store the user's private key required for the signature.
+
+For more information about the method refer to the [official Ethereum wiki](https://eth.wiki/json-rpc/API#eth\_sign).
