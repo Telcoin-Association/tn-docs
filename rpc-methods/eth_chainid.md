@@ -10,14 +10,22 @@ description: Returns the chain ID used for signing replay-protected transactions
 
 #### Returns
 
-`chainId` - hexadecimal value as a string representing the integer of the current chain id.
+`chainId` - Hexadecimal value as a string representing the integer of the current chain id.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":62}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":62}'
+```
+
+#### Result
+
+```
 {
   "id":67,
   "jsonrpc": "2.0",

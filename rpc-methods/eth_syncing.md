@@ -20,10 +20,18 @@ Will return `False` when the node is not syncing, and will return the following 
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
+```
+
+#### Result
+
+```
 {
   "id":1,
   "jsonrpc": "2.0",

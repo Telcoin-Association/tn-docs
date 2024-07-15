@@ -6,38 +6,46 @@ description: Returns the receipt of a transaction by transaction hash.
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a transaction
+`DATA`, 32 Bytes - Hash of a transaction
 
 #### Returns
 
 &#x20;`Object` - A transaction receipt object, or `null` when no receipt was found:
 
-* `transactionHash` : `DATA`, 32 Bytes - hash of the transaction.
-* `transactionIndex`: `QUANTITY` - integer of the transactions index position in the block.
-* `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in.
-* `blockNumber`: `QUANTITY` - block number where this transaction was in.
-* `from`: `DATA`, 20 Bytes - address of the sender.
-* `to`: `DATA`, 20 Bytes - address of the receiver. null when its a contract creation transaction.
-* `cumulativeGasUsed` : `QUANTITY` - The total amount of gas used when this transaction was executed in the block.
-* `effectiveGasPrice` : `QUANTITY` - The sum of the base fee and tip paid per unit of gas.
-* `gasUsed` : `QUANTITY` - The amount of gas used by this specific transaction alone.
+* `transactionHash`: `DATA`, 32 Bytes - Hash of the transaction.
+* `transactionIndex`: `QUANTITY` - Hexadecimal of the transactions index position in the block.
+* `blockHash`: `DATA`, 32 Bytes - Hash of the block where this transaction was in.
+* `blockNumber`: `QUANTITY` - Hexadecimal block number where this transaction was in.
+* `from`: `DATA`, 20 Bytes - Address of the sender.
+* `to`: `DATA`, 20 Bytes - Address of the receiver. null when its a contract creation transaction.
+* `cumulativeGasUsed` : `QUANTITY` - Hexadecimal of the total amount of gas used when this transaction was executed in the block.
+* `effectiveGasPrice` : `QUANTITY` - Hexadecimal of the sum of the base fee and tip paid per unit of gas.
+* `gasUsed` : `QUANTITY` - Hexadecimal of the amount of gas used by this specific transaction alone.
 * `contractAddress` : `DATA`, 20 Bytes - The contract address created, if the transaction was a contract creation, otherwise `null`.
 * `logs`: `Array` - Array of log objects, which this transaction generated.
 * `logsBloom`: `DATA`, 256 Bytes - Bloom filter for light clients to quickly retrieve related logs.
-* `type`: `QUANTITY` - integer of the transaction type, `0x0` for legacy transactions, `0x1` for access list types, `0x2` for dynamic fees.
+* `type`: `QUANTITY` - Hexadecimal of the transaction type, `0x0` for legacy transactions, `0x1` for access list types, `0x2` for dynamic fees.
 
 It also returns _either_ :
 
 * `root` : `DATA` 32 bytes of post-transaction stateroot (pre Byzantium)
-* `status`: `QUANTITY` either `1` (success) or `0` (failure)
+* `status`: `QUANTITY` either `0x1`(success) or `0x0` (failure)
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xbd3a14fcf09f3f9e5ca951f2bfedbc7237fe1cd0d68673231f1333eed801830d"],"id":1}'
-// Result
- {
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xbd3a14fcf09f3f9e5ca951f2bfedbc7237fe1cd0d68673231f1333eed801830d"],"id":1}'
+```
+
+#### Result
+
+```
+{
   "jsonrpc": "2.0",
   "result": {
     "transactionHash": "0xbd3a14fcf09f3f9e5ca951f2bfedbc7237fe1cd0d68673231f1333eed801830d",

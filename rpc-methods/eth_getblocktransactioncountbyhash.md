@@ -8,18 +8,26 @@ description: >-
 
 #### Parameters
 
-`DATA`, 32 Bytes - hash of a block
+`DATA`, 32 Bytes - Hash of a block
 
 #### Returns
 
-`QUANTITY` - integer of the number of transactions in this block.
+`QUANTITY` - Hexadecimal of the number of transactions in this block.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByHash","params":["0x5fb9fff1f0f914360abfefb0eac9c7d4fc733007c62c7caf1860d4052776b7d7"],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByHash","params":["0x5fb9fff1f0f914360abfefb0eac9c7d4fc733007c62c7caf1860d4052776b7d7"],"id":1}'
+```
+
+#### Result
+
+```
 {
   "id":1,
   "jsonrpc": "2.0",

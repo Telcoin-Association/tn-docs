@@ -6,20 +6,28 @@ description: Returns code at a given address.
 
 #### Parameters
 
-`DATA`, 20 Bytes - address
+`DATA`, 20 Bytes - Address
 
-`QUANTITY|TAG` - Hexadecimal representing an integer block number, or the string `"latest"`, `"earliest"`, `"safe"` or `"finalized"`, see the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block)
+`QUANTITY|TAG` - Hexadecimal integer block number, or the string `"latest"`, `"earliest"`, `"safe"` or `"finalized"`, see the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block)
 
 #### Returns
 
-`DATA` - the code from the given address.
+`DATA` - The code from the given address.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0x5eb15fedcca9cb9c5424167e329fd56905ffe0e3", "latest"],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0x5eb15fedcca9cb9c5424167e329fd56905ffe0e3", "latest"],"id":1}'
+```
+
+#### Result
+
+```
 {
   "id":1,
   "jsonrpc": "2.0",

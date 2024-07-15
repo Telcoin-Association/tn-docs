@@ -8,8 +8,8 @@ description: Returns an array of all logs matching a given filter object.
 
 `Object` - The filter options:
 
-* `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Hexadecimal representing a block number, or `"latest"` for the last mined block, `"safe"` for the latest safe block, `"finalized"` for the latest finalized block, or `"earliest"` for not yet mined transactions.
-* `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Hexadecimal representing a block number, or `"latest"` for the last mined block, `"safe"` for the latest safe block, `"finalized"` for the latest finalized block, or `"pending"`, `"earliest"` for not yet mined transactions.
+* `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Hexadecimal block number, or `"latest"` for the last mined block, `"safe"` for the latest safe block, `"finalized"` for the latest finalized block, or `"earliest"` for not yet mined transactions.
+* `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Hexadecimal block number, or `"latest"` for the last mined block, `"safe"` for the latest safe block, `"finalized"` for the latest finalized block, or `"earliest"` for not yet mined transactions.
 * `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
 * `topics`: `Array of DATA`, - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
 * `blockhash`: `DATA`, 32 Bytes - (optional, **future**) With the addition of EIP-234, `blockHash` will be a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`. Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`. If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
@@ -18,32 +18,43 @@ description: Returns an array of all logs matching a given filter object.
 
 `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
 
-* For filters created with `eth_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
-* For filters created with `eth_newPendingTransactionFilter` the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
-* For filters created with `eth_newFilter` logs are objects with following params:
-  * `removed`: `TAG` - `true` when the log was removed, due to a chain reorganization. `false` if its a valid log.
-  * `logIndex`: `QUANTITY` - integer of the log index position in the block. `null` when its pending log.
-  * `transactionIndex`: `QUANTITY` - integer of the transactions index position log was created from. `null` when its pending log.
-  * `transactionHash`: `DATA`, 32 Bytes - hash of the transactions this log was created from. `null` when its pending log.
-  * `blockHash`: `DATA`, 32 Bytes - hash of the block where this log was in. `null` when its pending. `null` when its pending log.
-  * `blockNumber`: `QUANTITY` - the block number where this log was in. `null` when its pending. `null` when its pending log.
-  * `address`: `DATA`, 20 Bytes - address from which this log originated.
-  * `data`: `DATA` - contains zero or more 32 Bytes non-indexed arguments of the log.
-  * `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In _solidity_: The first topic is the _hash_ of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except you declared the event with the `anonymous` specifier.)
+For filters created with `eth_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
+
+For filters created with `eth_newPendingTransactionFilter` the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
+
+For filters created with `eth_newFilter` logs are objects with following params:
+
+* `removed`: `TAG` - `true` when the log was removed, due to a chain reorganization. `false` if its a valid log.
+* `logIndex`: `QUANTITY` - Hexadecimal log index position in the block. `null` when its pending log.
+* `transactionIndex`: `QUANTITY` - Hexadecimal of the transactions index position log was created from. `null` when its pending log.
+* `transactionHash`: `DATA`, 32 Bytes - Hash of the transactions this log was created from. `null` when its pending log.
+* `blockHash`: `DATA`, 32 Bytes - Hash of the block where this log was in. `null` when its pending. `null` when its pending log.
+* `blockNumber`: `QUANTITY` - Hexadecimal of the block number where this log was in. `null` when its pending. `null` when its pending log.
+* `address`: `DATA`, 20 Bytes - Address from which this log originated.
+* `data`: `DATA` - Contains zero or more 32 Bytes non-indexed arguments of the log.
+* `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In _solidity_: The first topic is the _hash_ of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except you declared the event with the `anonymous` specifier.)
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{
-          fromBlock: "0x608EED",
-          toBlock: "0x608EEE",
-          topics: [
-            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-          ],
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{
+          "fromBlock": "0x608EED",
+          "toBlock": "0x608EEE",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+          ]
         }],"id":74}'
- // Result
- {
+```
+
+#### Result
+
+```
+{
   "jsonrpc": "2.0",
   "id": 74,
   "result": [

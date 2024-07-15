@@ -17,38 +17,44 @@ description: >-
 
 `gasPrice`: `QUANTITY` - (optional) Hexadecimal value of the `gasPrice` used for each paid gas.
 
-`? maxPriorityFeePerGas`: `QUANTITY` - Maximum fee, in Wei, the sender is willing to pay per gas above the base fee.
+`maxPriorityFeePerGas`: `QUANTITY` - Hexadecimal maximum fee, in Wei, the sender is willing to pay per gas above the base fee.
 
-`? maxFeePerGas`: `QUANTITY` - Maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay per gas.
+`maxFeePerGas`: `QUANTITY` - Hexadecimal maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay per gas.
 
 `value`: `QUANTITY` - Hexadecimal of the value sent with this transaction.
 
 `data`: `DATA` - (optional) Hash of the method signature and encoded parameters. See [Ethereum contract ABI specification](https://docs.soliditylang.org/en/latest/abi-spec.html).
 
-`block parameter`: `QUANTITY|TAG` \[_Required_] - A hexadecimal block number, or one of the string tags `latest`, `earliest`, `pending`, `safe`, or `finalized`. See the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block).
+`block parameter`: `QUANTITY|TAG` \[_Required_] - Hexadecimal block number, or one of the string tags `latest`, `earliest`, `safe`, or `finalized`. See the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block).
 
 #### Returns
 
-`DATA`, the return value of the executed contract
+`DATA` - The return value of the executed contract
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_call","params":[{
-          from: "0xb60e8dd61c5d32be8058bb8eb970870f07233154",
-          to: "0xd46e8dd67c5d32be8058bb8eb970870f07244566",
-          gas: "0x76c0",
-          gasPrice: "0x0",
-          value: "0x0",
-          data: "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445695",
-        },
-        "latest"],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_call","params":[{
+  "to":"0x4392743B97C46c6Aa186A7f3D0468fbF177ee70F",
+  "gas":"0x76c0",
+  "gasPrice":"0x0",
+  "value":"0x0",
+  "data":"0x06fdde03"},
+  "latest"],"id":1}'
+```
+
+#### Result
+
+```
 {
-  "id":1,
-  "jsonrpc": "2.0",
-  "result": "0x"
+"jsonrpc":"2.0",
+"result":"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b54656c636f696e20415544000000000000000000000000000000000000000000", // Telcoin AUD
+"id":1
 }
 ```
 

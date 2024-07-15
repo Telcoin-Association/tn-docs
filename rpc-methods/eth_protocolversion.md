@@ -10,14 +10,22 @@ description: Returns the current Telcoin Network protocol version.
 
 #### Returns
 
-`String` - Hexadecimal representing the current Telcoin Network protocol version
+`QUANTITY` - Hexadecimal of the current Telcoin Network protocol version
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_protocolVersion","params":[],"id":67}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_protocolVersion","params":[],"id":67}'
+```
+
+#### Result
+
+```
 {
   "id":67,
   "jsonrpc": "2.0",

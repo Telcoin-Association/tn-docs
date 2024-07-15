@@ -31,6 +31,8 @@
   * [eth\_maxPriorityFeePerGas](rpc-methods/eth\_maxpriorityfeepergas.md)
   * [eth\_protocolVersion](rpc-methods/eth\_protocolversion.md)
   * [eth\_sendRawTransaction (to do)](rpc-methods/eth\_sendrawtransaction-to-do.md)
+  * [eth\_sendTransaction (to do)](rpc-methods/eth\_sendtransaction-to-do.md)
+  * [eth\_sign (todo)](rpc-methods/eth\_sign-todo.md)
   * [eth\_syncing](rpc-methods/eth\_syncing.md)
   * [Filter Methods](rpc-methods/filter-methods/README.md)
     * [eth\_getFilterChanges](rpc-methods/filter-methods/eth\_getfilterchanges.md)

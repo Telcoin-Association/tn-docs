@@ -8,14 +8,22 @@ Creates a filter in the node, to notify when new pending transactions arrive. To
 
 #### Returns
 
-`QUANTITY` - A filter id.
+`DATA` - A filter id.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_newPendingTransactionFilter","params":[],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_newPendingTransactionFilter","params":[],"id":1}'
+```
+
+#### Result
+
+```
 {
   "jsonrpc": "2.0",
   "result": "0x38d257a1aab91606194ba7211d4ce26",

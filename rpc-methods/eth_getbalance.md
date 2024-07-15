@@ -6,23 +6,32 @@ description: Returns the balance of the account of given address.
 
 #### Parameters
 
-* `DATA`, 20 Bytes - address to check for balance.
-* `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"`, `"pending"`, `"safe"`, or `"finalized"`, see the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block)
+`DATA`, 20 Bytes - Address to check for balance.
+
+`QUANTITY|TAG` - Hexadecimal integer block number, or the string `"latest"`, `"earliest"`, `"safe"`, or `"finalized"`, see the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block)
 
 #### Returns
 
-`QUANTITY` - A hexadecimal of the current account balance in wei.
+`QUANTITY` - Hexadecimal of the current account balance in wei.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x3da87b1c3743bd2da60df2ef1bc6f26ef9da6086", "latest"],"id":1}'
+```
+
+#### Result
+
+```
 {
-  "id":1,
-  "jsonrpc": "2.0",
-  "result": "0x0234c8a3397aab58" // 158972490234375000
+"jsonrpc":"2.0",
+"result":"0xfbea2ff545df4530c6", // 4.6470077e+21
+"id":1
 }
 ```
 

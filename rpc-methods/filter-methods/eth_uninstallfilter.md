@@ -4,7 +4,7 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 
 #### Parameters
 
-`QUANTITY` - The filter id.
+`DATA` - The filter id.
 
 #### Returns
 
@@ -12,10 +12,18 @@ Uninstalls a filter with given id. Should always be called when watch is no long
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0x38d257a1aab91606194ba7211d4ce26"],"id":73}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0x26c221936b2025a44f60294273d7bbaa"],"id":73}'
+```
+
+#### Result
+
+```
 {
   "jsonrpc": "2.0",
   "result": true,

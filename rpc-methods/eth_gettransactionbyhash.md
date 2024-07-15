@@ -4,35 +4,41 @@ description: Returns the information about a transaction requested by transactio
 
 # eth\_getTransactionByHash
 
-#### Parameters
-
-`DATA`, 32 Bytes - hash of a transaction
+`DATA`, 32 Bytes - Hash of a transaction
 
 #### Returns
 
 `Object` - A transaction object, or `null` when no transaction was found:
 
-* `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in. `null` when its pending.
-* `blockNumber`: `QUANTITY` - block number where this transaction was in. `null` when its pending.
-* `from`: `DATA`, 20 Bytes - address of the sender.
-* `gas`: `QUANTITY` - gas provided by the sender.
-* `gasPrice`: `QUANTITY` - gas price provided by the sender in Wei.
+* `blockHash`: `DATA`, 32 Bytes - Hash of the block where this transaction was in. `null` when its pending.
+* `blockNumber`: `QUANTITY` - Hexadecimal block number where this transaction was in. `null` when its pending.
+* `from`: `DATA`, 20 Bytes - Address of the sender.
+* `gas`: `QUANTITY` - Hexadecimal of the gas provided by the sender.
+* `gasPrice`: `QUANTITY` - Hexadecimal of the gas price provided by the sender in Wei.
 * `hash`: `DATA`, 32 Bytes - hash of the transaction.
 * `input`: `DATA` - the data send along with the transaction.
-* `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
+* `nonce`: `QUANTITY` - Hexadecimal number of transactions made by the sender prior to this one.
 * `to`: `DATA`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
-* `transactionIndex`: `QUANTITY` - integer of the transactions index position in the block. `null` when its pending.
-* `value`: `QUANTITY` - value transferred in Wei.
+* `transactionIndex`: `QUANTITY` - Hexadecimal of the transaction's index position in the block. `null` when its pending.
+* `value`: `QUANTITY` - Hexadecimal value transferred in Wei.
 * `v`: `QUANTITY` - ECDSA recovery id
 * `r`: `QUANTITY` - ECDSA signature r
 * `s`: `QUANTITY` - ECDSA signature s
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0xbd3a14fcf09f3f9e5ca951f2bfedbc7237fe1cd0d68673231f1333eed801830d"],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0xbd3a14fcf09f3f9e5ca951f2bfedbc7237fe1cd0d68673231f1333eed801830d"],"id":1}'
+```
+
+#### Result
+
+```
 {
   "jsonrpc": "2.0",
   "result": {

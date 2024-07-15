@@ -14,10 +14,18 @@ description: Returns true if client is actively listening for network connection
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'
+```
+
+#### Result
+
+```
 {
     "id":67, 
     "jsonrpc":"2.0", 

@@ -8,17 +8,26 @@ description: >-
 
 #### Parameters
 
-`QUANTITY|TAG` - integer of a block number, or the string `"latest"`, `"earliest"`, `"safe"` or `"finalized"`, see the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block)
+`QUANTITY|TAG` - Hexadecimal of a block number, or the string `"latest"`, `"earliest"`, `"safe"` or `"finalized"`, see the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block)
 
 #### Returns
 
-`QUANTITY` - integer of the number of uncles in this block.
+`QUANTITY` - Hexadecimal of the number of uncles in this block.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockNumber","params":["0x6038C1"],"id":1}'
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getUncleCountByBlockNumber","params":["0x6038C1"],"id":1}'
+```
+
+#### Result
+
+```
 ```
 
 [source](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth\_getunclecountbyblocknumber)

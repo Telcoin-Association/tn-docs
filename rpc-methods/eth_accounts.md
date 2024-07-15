@@ -10,18 +10,26 @@ description: Returns a list of addresses owned by client
 
 #### Returns
 
-`Array of DATA`, 20 Bytes - addresses owned by the client.
+`Array` of `DATA`, 20 Bytes - Addresses owned by the client.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'
+```
+
+#### Result
+
+```
 {
   "id":1,
   "jsonrpc": "2.0",
-  "result": ["0x7e1Fde4A921397A7284570581aC41d827A712E8a"]
+  "result": []
 }
 ```
 

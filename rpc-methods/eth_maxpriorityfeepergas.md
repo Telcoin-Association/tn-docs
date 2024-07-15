@@ -12,14 +12,22 @@ description: >-
 
 #### Returns
 
-`QUANTITY` - Hexadecimal value of the priority fee, in wei, needed to be included in a block.
+`QUANTITY` - Hexadecimal of the priority fee, in wei, needed to be included in a block.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_maxPriorityFeePerGas","params":[],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_maxPriorityFeePerGas","params":[],"id":1}'
+```
+
+#### Result
+
+```
 {
   "jsonrpc": "2.0",
   "result": "0x3b9aca00",

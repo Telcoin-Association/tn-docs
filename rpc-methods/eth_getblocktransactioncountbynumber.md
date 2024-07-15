@@ -6,18 +6,26 @@ description: Returns the number of transactions in a block matching the given bl
 
 #### Parameters
 
-`QUANTITY|TAG` - Hexadecimal representing a block number, or the string `"earliest"`, `"latest"`,  `"safe"` or `"finalized"`
+`QUANTITY|TAG` - Hexadecimal block number, or the string `"earliest"`, `"latest"`,  `"safe"` or `"finalized"`
 
 #### Returns
 
-`QUANTITY` - Hexadecimal representing the number of transactions in this block.
+`QUANTITY` - Hexadecimal number of transactions in this block.
 
 #### Example
 
+#### Request
+
 ```
-// Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["0x608EED"],"id":1}'
-// Result
+curl https://rpc.adiri.tel \
+ -X POST \
+ -H "Content-Type: application/json" \
+ --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["0x608EED"],"id":1}'
+```
+
+#### Result
+
+```
 {
   "id":1,
   "jsonrpc": "2.0",
