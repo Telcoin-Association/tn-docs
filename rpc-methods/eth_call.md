@@ -9,21 +9,17 @@ description: >-
 
 #### Parameters
 
-`from`: `DATA`, 20 bytes - (optional) The address the transaction is sent from.
+`Object` - The transaction call object:
 
-`to`: `DATA`, 20 bytes - The address the transaction is directed to.
-
-`gas`: `QUANTITY` - (optional) Hexadecimal value of the gas provided for the transaction execution. `eth_call` consumes zero gas, but this parameter may be needed by some executions.
-
-`gasPrice`: `QUANTITY` - (optional) Hexadecimal value of the `gasPrice` used for each paid gas.
-
-`maxPriorityFeePerGas`: `QUANTITY` - Hexadecimal maximum fee, in Wei, the sender is willing to pay per gas above the base fee.
-
-`maxFeePerGas`: `QUANTITY` - Hexadecimal maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay per gas.
-
-`value`: `QUANTITY` - Hexadecimal of the value sent with this transaction.
-
-`data`: `DATA` - (optional) Hash of the method signature and encoded parameters. See [Ethereum contract ABI specification](https://docs.soliditylang.org/en/latest/abi-spec.html).
+* `from`: `DATA`, 20 bytes - (optional) The address the transaction is sent from.
+* `to`: `DATA`, 20 bytes - The address the transaction is directed to.
+* `gas`: `QUANTITY` - (optional) Hexadecimal value of the gas provided for the transaction execution.&#x20;
+* `eth_call` consumes zero gas, but this parameter may be needed by some executions.
+* `gasPrice`: `QUANTITY` - (optional) Hexadecimal value of the `gasPrice` used for each paid gas.
+* `maxPriorityFeePerGas`: `QUANTITY` - Hexadecimal maximum fee, in Wei, the sender is willing to pay per gas above the base fee.
+* `maxFeePerGas`: `QUANTITY` - Hexadecimal maximum total fee (base fee + priority fee), in Wei, the sender is willing to pay per gas.
+* `value`: `QUANTITY` - Hexadecimal of the value sent with this transaction.
+* `data`: `DATA` - (optional) Hash of the method signature and encoded parameters. See [Ethereum contract ABI specification](https://docs.soliditylang.org/en/latest/abi-spec.html).
 
 `block parameter`: `QUANTITY|TAG` \[_Required_] - Hexadecimal block number, or one of the string tags `latest`, `earliest`, `safe`, or `finalized`. See the [default block parameter](https://ethereum.org/en/developers/docs/apis/json-rpc/#default-block).
 
