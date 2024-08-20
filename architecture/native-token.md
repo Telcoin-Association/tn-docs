@@ -8,7 +8,7 @@ description: >-
 
 ### Overview
 
-Native tokens are what blockchain protocols requires users to pay for transaction processing (gas). The native token for Telcoin Network is Telcoin (TEL).
+Native tokens are what blockchain protocols require users to pay for transaction processing (gas). The native token for Telcoin Network is Telcoin (TEL).
 
 ### Challenges
 
