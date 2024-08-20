@@ -1,3 +1,9 @@
+---
+description: >-
+  How Telcoin (TEL) started as an ERC-20 on Ethereum and is used as the native
+  token on Telcoin Network.
+---
+
 # Native Token
 
 ### Overview
