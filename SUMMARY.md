@@ -2,6 +2,7 @@
 
 * [Overview](README.md)
 * [Architecture](architecture/README.md)
+  * [Native Token](architecture/native-token.md)
   * [Security](architecture/security.md)
   * [Transaction lifecycle](architecture/transaction-lifecycle.md)
   * [Consensus Layer](architecture/consensus-layer.md)
