@@ -63,3 +63,4 @@
   * [net\_peerCount](rpc-methods/net\_peercount.md)
 * [Reference](reference/README.md)
   * [Stablecoin Contracts](reference/stablecoin-contracts.md)
+* ["Adiri"](adiri.md)
