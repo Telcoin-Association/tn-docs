@@ -22,7 +22,7 @@ Users may need to import tokens to see updated balances in their wallets. If lar
 
 Open your wallet, and you should see the testnet tokens with an increased balance.
 
-**Telcoin Network: Adiri Testnet Details**
+#### **Telcoin Network: Adiri Testnet Details**
 
 You will be prompted to add the new network information. Enter the following details:
 
@@ -30,7 +30,9 @@ You will be prompted to add the new network information. Enter the following det
 * **RPC URLs**:&#x20;
   * https://adiri.tel&#x20;
   * https://rpc.adiri.tel
-  * https://rpc.telcoin.network
+  * https://node1.telcoin.network
+  * https://node2.telcoin.network
+  * https://node3.telcoin.network
 * **Chain ID**: 2017
 * **Currency Symbol**: TEL
 * **Block Explorer URL**: https://telscan.io
@@ -40,6 +42,7 @@ You will be prompted to add the new network information. Enter the following det
 * Testnet Tokens: The tokens received from the faucet are for testnet use only and have no real-world value.
 * Exploration and Learning: Use these tokens to explore the features and functionalities of the Telcoin Network, test smart contracts, or try out dApps in a risk-free environment.
 * Limited Quantity: There is a limit to the number of tokens you can request within a specific timeframe to ensure fair distribution among all users.
+* Developers sending multiple transactions in a row should connect to an RPC node directly using: https://node1.telcoin.network, https://node2.telcoin.network, or https://node3.telcoin.network
 
 If you encounter any issues or need further assistance, feel free to email us at support@telcoin.org
 
