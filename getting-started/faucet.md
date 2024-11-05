@@ -2,7 +2,9 @@
 
 **1. Visit the Telcoin Network TEL Faucet**
 
-Visit[ https://telcoin.network/faucet](https://telcoin.network/faucet)
+Visit[ https://telcoin.network/faucet](https://telcoin.network/faucet) on a desktop browser.
+
+Mobile users may need to follow a different procedure based on their mobile wallet application. For example, MetaMask users [must access the faucet webpage from the MetaMask application browser](https://support.metamask.io/getting-started/how-to-use-the-metamask-mobile-browser/) in order to interact with the faucet.
 
 **2. Press "Connect Wallet" Button**
 
