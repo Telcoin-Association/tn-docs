@@ -16,6 +16,7 @@
   * [Dapp Development](getting-started/dapp-development/README.md)
     * [Development Tools](getting-started/dapp-development/development-tools.md)
   * [Faucet](getting-started/faucet.md)
+  * [Hardware Requirements](getting-started/hardware-requirements.md)
 * [Networks and RPC Endpoints](networks-and-rpc-endpoints.md)
 * [RPC Methods](<README (1).md>)
   * [eth\_accounts](rpc-methods/eth\_accounts.md)
