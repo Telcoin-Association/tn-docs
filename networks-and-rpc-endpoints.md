@@ -14,6 +14,10 @@ The public RPC URLs listed below are rate limited and do not support websocket c
 
 <table><thead><tr><th width="220">Parameter</th><th>Value</th></tr></thead><tbody><tr><td>Network Name</td><td>Telcoin Network Adiri Testnet</td></tr><tr><td>Chain ID</td><td><code>0x7e1</code></td></tr><tr><td>Currency Symbol</td><td>TEL</td></tr><tr><td>Explorer</td><td><a href="https://telscan.io/">https://telscan.io/</a></td></tr><tr><td>Public RPC URL</td><td><a href="https://rpc.adiri.tel">https://rpc.adiri.tel</a></td></tr></tbody></table>
 
+### Unstable Testnet
+
+Adiri Testnet is the only network currently deployed. While Adiri Testnet is intended to be as stable as possible, the protocol is still under heavy development and may be reset from time to time before mainnet is launched to incorporate breaking changes.
+
 ### Developer Notes
 
 The public RPC endpoint at https://rpc.adiri.tel uses a load balancer and is primarily useful for single transactions and read queries.
