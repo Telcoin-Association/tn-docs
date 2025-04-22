@@ -24,7 +24,7 @@ Operators are required to submit detailed specifications of their intended node 
 
 **Recommended**: Higher clock speed over core count
 
-**Benchmark Scores:** Minimum 2000, Recommended 2500 **(**PassMark Single Thread)
+**Benchmark Scores:** Minimum 2000, Recommended 2500 **(**&#x50;assMark Single Thread)
 
 ### Memory
 
@@ -38,9 +38,11 @@ Operators are required to submit detailed specifications of their intended node 
 
 **Recommended**: 7.5 TB of TLC NVMe SSD
 
-**Network Connectivity Minimum**: 500 Mb/s sustained internet bandwidth, 1-Gigabit Ethernet interface&#x20;
+### Networking
 
-**Recommended**: 1000 Mb/s sustained internet bandwidth, 10-Gigabit interface
+**Network Connectivity Minimum**: 1000 Mb/s sustained internet bandwidth, 1-Gigabit Ethernet interface&#x20;
+
+**Recommended**: 1000+ Mb/s sustained internet bandwidth, 10-Gigabit interface
 
 ### Operating System
 
