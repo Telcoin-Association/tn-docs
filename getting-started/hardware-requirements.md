@@ -28,9 +28,9 @@ Operators are required to submit detailed specifications of their intended node 
 
 ### Memory
 
-**Minimum**: 128 GB DDR4 ECC Registered DIMM, 2666MHz or faster&#x20;
+**Minimum**: 64 GB DDR4 ECC Registered DIMM, 2666MHz or faster&#x20;
 
-**Recommended**: 256 GB or higher, 3200MHz
+**Recommended**: 128 GB or higher, 3200MHz
 
 ### Storage
 
