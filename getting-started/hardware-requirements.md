@@ -24,13 +24,13 @@ Operators are required to submit detailed specifications of their intended node 
 
 **Recommended**: 32 cores - higher clock speed over core count
 
-**Benchmark Scores:** Minimum 2000, Recommended 2500 **(**&#x50;assMark Single Thread)
+**Benchmark Scores:** 4000+ Single Thread Performance (PassMark Single Thread)
 
 ### Memory
 
-**Minimum**: 64 GB DDR4 ECC Registered DIMM, 2666MHz or faster&#x20;
+**Minimum**: 128 GB DDR4/DDR5 ECC Registered DIMM (highest MT/s possible)&#x20;
 
-**Recommended**: 128 GB or higher, 3200MHz+
+**Recommended**: 128 GB or higher (highest MT/s possible)&#x20;
 
 ### Storage
 
@@ -68,7 +68,7 @@ x86 / x64 / ARM64 / AArch64
 
 ### Storage
 
-500GB - 2TB of **TLC** NVMe SSD (upgradeable)
+500GB - 2TB of **TLC** NVMe SSD (expandable)
 
 ### Networking
 
