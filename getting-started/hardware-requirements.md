@@ -34,7 +34,7 @@ Operators are required to submit detailed specifications of their intended node 
 
 ### Storage
 
-**Minimum**: 2 TB of **TLC** NVMe SSD
+**Minimum**: 4 TB of **TLC** NVMe SSD
 
 **Recommended**: 7.5 TB of **TLC** NVMe SSD
 
