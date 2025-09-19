@@ -1,6 +1,3 @@
-https://github.com/leopashov/tn-docs
-https://medium.com/@richdayandnight/simple-tutorial-on-hosting-your-gitbook-documentation-on-github-pages-bonus-with-gitbook-editor-f27f60d5d408
-
 # Overview
 
 Telcoin Network is an EVM-compatible, public blockchain secured by GSMA Operator Member Mobile Network Operators globally using proof of stake consensus. The system serves as underlying blockchain architecture securing private property rights over digital assets and enabling on-chain protocols and applications such as TELx.
