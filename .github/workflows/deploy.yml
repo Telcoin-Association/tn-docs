@@ -1,0 +1,68 @@
+name: Deploy GitBook to Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Avoid overlapping deploys on rapid pushes
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: node:10.24.1
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Cache npm and GitBook plugins (node_modules)
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('book.json') }}
+      - name: Cache GitBook plugins (node_modules)
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: gitbook-plugins-${{ runner.os }}-${{ hashFiles('book.json') }}
+
+      # Install GitBook CLI & stable runtime
+      - name: Install GitBook CLI
+        run: npm install -g gitbook-cli@2.3.2
+      - name: Pin GitBook runtime
+        run: gitbook fetch 3.2.3
+
+      # Install plugins and build
+      - name: Install GitBook plugins
+        run: gitbook install
+      - name: Build static site
+        run: gitbook build . _book
+
+      # Ensure we have a 404 for deep links (good for SPAs/docs)
+      - name: Add 404.html fallback
+        run: |
+          if [ ! -f "_book/404.html" ]; then
+            cp _book/index.html _book/404.html
+          fi
+
+      # Upload and deploy via native GitHub Pages actions
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_book
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
