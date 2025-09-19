@@ -5,6 +5,9 @@ on:
   push:
     branches: [ main ]   # only publish from your fork's main
 
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
 concurrency:
   group: pages-deploy
   cancel-in-progress: true
