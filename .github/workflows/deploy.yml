@@ -1,0 +1,47 @@
+name: Deploy GitBook to Pages
+
+on:
+  workflow_dispatch:        # manual "Run workflow" button
+  push:
+    branches:
+      - main                # ONLY deploy on pushes to main (in your fork)
+
+# Prevent overlapping deploys
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    # Hard guard: ONLY run in your fork, never in Telcoin-Association
+    if: github.repository == 'leopashov/tn-docs'
+
+    runs-on: ubuntu-latest
+    container: node:10.24.1
+    environment: github-pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install GitBook CLI
+        run: npm install -g gitbook-cli@2.3.2
+      - name: Pin GitBook runtime
+        run: gitbook fetch 3.2.3
+
+      - name: Install GitBook plugins
+        run: gitbook install
+      - name: Build static site
+        run: gitbook build . _book
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_book
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
