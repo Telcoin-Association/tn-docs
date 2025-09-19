@@ -3,7 +3,7 @@ name: Deploy GitBook to Pages
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main ]   # only publish from your fork's main
 
 concurrency:
   group: pages-deploy
@@ -16,6 +16,8 @@ permissions:
 
 jobs:
   deploy:
+    # never run on the Telcoin-Association repo by accident
+    if: github.repository == 'leopashov/tn-docs'
 
     runs-on: ubuntu-latest
     container: node:10.24.1
@@ -36,27 +38,28 @@ jobs:
       - name: Pin GitBook runtime
         run: gitbook fetch 3.2.3
 
-      - name: Install GitBook plugins
-        run: gitbook install
-
-      - name: Build to temp dir
-        id: build
+      - name: Install plugins (with simple retry)
         run: |
-          set -euo pipefail
-          OUTDIR="$(mktemp -d)"
-          echo "outdir=$OUTDIR" >> "$GITHUB_OUTPUT"
-          gitbook build "$(pwd)" "$OUTDIR"
-          # 404 fallback for deep links
-          if [ ! -f "$OUTDIR/404.html" ] && [ -f "$OUTDIR/index.html" ]; then
-            cp "$OUTDIR/index.html" "$OUTDIR/404.html"
+          gitbook install || (npm cache clean -f && gitbook install)
+
+      - name: Clean output dir
+        run: rm -rf _book
+
+      - name: Build site to ./_book (verbose)
+        run: gitbook build "$(pwd)" "$(pwd)/_book" --log=debug --debug
+
+      - name: Add 404.html fallback
+        run: |
+          if [ -f "_book/index.html" ] && [ ! -f "_book/404.html" ]; then
+            cp _book/index.html _book/404.html
           fi
-          ls -la "$OUTDIR" | head -n 200
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.build.outputs.outdir }}
+          path: ./_book
 
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
