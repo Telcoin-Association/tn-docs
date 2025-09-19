@@ -1,0 +1,83 @@
+/* Layout & typography */
+.book .book-body .page-wrapper .page-inner {
+    max-width: 920px;          /* wider content */
+  }
+  .book.color-theme-1 .book-body {
+    background: #0b1220;       /* subtle dark canvas */
+  }
+  .book .book-body .page-wrapper {
+    background: #0f1526;       /* page card */
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  }
+  .markdown-section {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #e6e9ef;
+  }
+  .markdown-section h1, .markdown-section h2, .markdown-section h3 {
+    color: #fff;
+    letter-spacing: .2px;
+  }
+  .markdown-section a {
+    color: #6bc2ff;
+    text-decoration: none;
+  }
+  .markdown-section a:hover { text-decoration: underline; }
+  
+  /* Sidebar */
+  .book-summary {
+    background: #0b1220;
+    border-right: 1px solid #20283a;
+  }
+  .book-summary .summary li a {
+    color: #cbd5e1;
+  }
+  .book-summary .summary li.active > a {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* Code blocks */
+  .markdown-section pre, .markdown-section code {
+    background: #0b192d !important;
+    border-radius: 10px;
+  }
+  .markdown-section pre {
+    padding: 14px 16px;
+    border: 1px solid #1c2a44;
+  }
+  
+  /* Tables */
+  .markdown-section table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #0f1526;
+    border: 1px solid #24314a;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .markdown-section th, .markdown-section td {
+    border: none;
+    padding: 10px 12px;
+  }
+  .markdown-section tr:nth-child(odd) td {
+    background: #0d1424;
+  }
+  
+  /* Inline “hint” blocks look-card */
+  .hint {
+    border-radius: 12px;
+    border: 1px solid #284b63;
+    background: #0e1c2b;
+  }
+  .hint.info    { border-color:#2563eb; background:#0d1b2f; }
+  .hint.warning { border-color:#f59e0b; background:#231a07; }
+  .hint.danger  { border-color:#ef4444; background:#2a0d0d; }
+  .hint.tip     { border-color:#10b981; background:#05231c; }
+  
+  /* Footer */
+  .book .footer {
+    color:#94a3b8;
+    border-top: 1px solid #20283a;
+  }
+  
