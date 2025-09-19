@@ -1,5 +1,0 @@
-{
-  "title": "Telcoin Network",
-  "plugins": ["-sharing", "search", "anchors", "toc"],
-  "pluginsConfig": {}
-}
