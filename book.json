@@ -1,8 +1,5 @@
 {
   "title": "Telcoin Network",
-  "plugins": ["-highlight", "-livereload", "-sharing", "search@2.2.1", "hints@1.0.2"],
-  "pluginsConfig": {
-    "hints": { "info": "Info", "warning": "Warning", "danger": "Danger", "tip": "Tip" }
-  }
+  "plugins": ["-sharing", "search", "anchors", "toc"],
+  "pluginsConfig": {}
 }
-
