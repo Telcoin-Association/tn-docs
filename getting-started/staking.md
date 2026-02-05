@@ -134,7 +134,7 @@ cast send 0x07E17e17E17e17E17e17E17E17E17e17e17E17e1 \
   <BLS_PUBKEY_COMPRESSED> \
   "(<UNCOMPRESSED_PUBKEY>,<UNCOMPRESSED_SIGNATURE>)" \
   --value <STAKE_AMOUNT> \
-  --private-key <YOUR_PRIVATE_KEY> \
+  --trezor \
   --rpc-url <RPC_URL>
 ```
 
@@ -185,7 +185,7 @@ This function must be called from the validator address (the address that owns t
 ```bash
 cast send 0x07E17e17E17e17E17e17E17E17E17e17e17E17e1 \
   "activate()" \
-  --private-key <YOUR_PRIVATE_KEY> \
+  --trezor \
   --rpc-url <RPC_URL>
 ```
 
@@ -251,7 +251,7 @@ To leave the active validator set:
 ```bash
 cast send 0x07E17e17E17e17E17e17E17E17E17e17e17E17e1 \
   "beginExit()" \
-  --private-key <YOUR_PRIVATE_KEY> \
+  --trezor \
   --rpc-url <RPC_URL>
 ```
 
@@ -265,7 +265,7 @@ After exiting and waiting one full epoch, reclaim your stake and rewards:
 cast send 0x07E17e17E17e17E17e17E17E17E17e17e17E17e1 \
   "unstake(address)" \
   <VALIDATOR_ADDRESS> \
-  --private-key <YOUR_PRIVATE_KEY> \
+  --trezor \
   --rpc-url <RPC_URL>
 ```
 
@@ -282,7 +282,7 @@ Active validators can claim accrued rewards without exiting:
 cast send 0x07E17e17E17e17E17e17E17E17E17e17e17E17e1 \
   "claimStakeRewards(address)" \
   <VALIDATOR_ADDRESS> \
-  --private-key <YOUR_PRIVATE_KEY> \
+  --trezor \
   --rpc-url <RPC_URL>
 ```
 
