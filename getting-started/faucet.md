@@ -48,4 +48,4 @@ You will be prompted to add the new network information. Enter the following det
 
 If you encounter any issues or need further assistance, feel free to email us at support@telcoin.org
 
-\
+<br>

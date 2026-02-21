@@ -12,4 +12,4 @@ In addition to transaction fees, the leader of the consensus block receives the 
 
 One current limitation of the protocol allows for the possibility of duplicate transactions within competing batches from different validators. The first executed batch that contains this transaction receives the priority fees if there are any. However, basefees and block rewards remain the same.
 
-\
+<br>

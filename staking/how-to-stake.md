@@ -4,7 +4,7 @@ description: >-
   validator node on Telcoin Network.
 ---
 
-# Staking
+# How to Stake
 
 ### Overview
 
@@ -16,7 +16,7 @@ Becoming an active validator requires three on-chain transactions:
 
 ### Prerequisites
 
-#### [Hardware Requirements](staking.md#hardware-requirements)
+#### [Hardware Requirements](how-to-stake.md#hardware-requirements)
 
 | Component     | Minimum                        | Recommended                            |
 | ------------- | ------------------------------ | -------------------------------------- |

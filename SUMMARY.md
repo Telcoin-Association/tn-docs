@@ -17,7 +17,6 @@
     * [Development Tools](getting-started/dapp-development/development-tools.md)
   * [Faucet](getting-started/faucet.md)
   * [Hardware Requirements](getting-started/hardware-requirements.md)
-  * [Staking](getting-started/staking.md)
 * [Networks and RPC Endpoints](networks-and-rpc-endpoints.md)
 * [RPC Methods](<README (1).md>)
   * [eth\_accounts](rpc-methods/eth_accounts.md)
@@ -65,6 +64,11 @@
 * [Reference](reference/README.md)
   * [Stablecoin Contracts](reference/stablecoin-contracts.md)
   * [Adiri](reference/adiri.md)
+* [Staking](staking/README.md)
+  * [How Staking Works](staking/how-staking-works.md)
+  * [Why Membership Model](staking/why-membership-model.md)
+  * [How to Stake](staking/how-to-stake.md)
+  * [Future Direction](staking/future-direction.md)
 
 ## FAQs
 
