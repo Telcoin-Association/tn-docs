@@ -69,6 +69,7 @@
   * [Why Membership Model](staking/why-membership-model.md)
   * [How to Stake](staking/how-to-stake.md)
   * [Future Direction](staking/future-direction.md)
+* [Basefees](basefees.md)
 
 ## FAQs
 
