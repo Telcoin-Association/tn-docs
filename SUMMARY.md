@@ -70,6 +70,7 @@
   * [How to Stake](staking/how-to-stake.md)
   * [Future Direction](staking/future-direction.md)
 * [Basefees](basefees.md)
+* [Gas Limit Penalty](gas-limit-penalty.md)
 
 ## FAQs
 
