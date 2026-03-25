@@ -73,6 +73,7 @@
 * [Gas Limit Penalty](gas-limit-penalty.md)
 * [EVM Compatibility](evm-compatibility.md)
 * [Epoch Boundaries](epoch-boundaries.md)
+* [Canonical Updates](canonical-updates.md)
 
 ## FAQs
 
