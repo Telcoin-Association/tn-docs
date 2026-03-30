@@ -7,6 +7,30 @@ description: >-
 
 # Why Membership Model
 
+### Why This Approach
+
+#### More nodes, not bigger nodes
+
+The fundamental argument is about what economic behavior the staking model encourages.
+
+In a stake-weighted system, an operator with 1,000,000 TEL and a 100,000 TEL minimum stake has no reason to run 10 nodes. Running one node with 1,000,000 TEL staked produces the same (or better, after infrastructure savings) return. The network gets one node.
+
+In the membership model, that same operator can only stake 100,000 TEL per node. To deploy all their capital productively, they launch 10 validators -- each requiring governance approval, its own keys, its own infrastructure, and its own ConsensusNFT. The network gets 10 nodes. Each of those nodes independently produces consensus headers, serves the network, and strengthens its resilience against downtime and partitions.
+
+This is not a theoretical distinction. The validator set size directly determines the network's fault tolerance threshold, geographic distribution potential, and resistance to correlated failures. A network with 100 nodes operated by 20 entities is materially more robust than one with 20 nodes operated by 20 entities where some happen to have larger stakes.
+
+#### Performance-based differentiation
+
+Equal-weight models avoid the concentration problem but introduce a free-rider problem. The membership model solves both: the fixed stake prevents concentration, while the header-count weight rewards active participation. Validators who invest in reliable infrastructure, maintain high uptime, and stay current on protocol upgrades earn more. They are incentivized because the contributed more to the network, not because they contributed more.
+
+#### Version system as a governance lever
+
+The stake version system gives governance a tool to adjust the network's economics without hard forks. If the network needs to raise the barrier to entry (e.g., to increase economic security), governance increments the version with a higher stake amount. If it needs to lower barriers to accelerate growth, it can reduce the stake. Existing validators are not retroactively affected, but earn rewards based on the proportion they have staked relative to all other committee members. This creates a stable, predictable environment for current operators while preserving flexibility for the network's future.
+
+#### Permissioned context
+
+Telcoin Network validators are mobile network operators vetted by governance. This is not an open-entry permissionless system where Sybil resistance must come purely from economic cost. The ConsensusNFT whitelist provides the Sybil resistance layer. The stake serves as an economic commitment and alignment mechanism. "Well known" validators act as the sole defense against malicious actors. This context makes a fixed-stake membership model viable where it might not be in a permissionless network with anonymous node operators.
+
 ### Approaches Considered
 
 #### 1. Pure Stake-Weighted Model
@@ -18,9 +42,9 @@ In a traditional proof-of-stake system, validators lock variable amounts of stak
 **Pros:**
 
 * Well-understood model with extensive research and battle-tested implementations (Ethereum, Cosmos, Solana)
-* Economic security scales directly with total value locked -- attacking the network requires acquiring proportional stake
-* Flexible entry -- validators can participate at various capital levels
-* Capital efficiency -- validators maximize returns from a single node without additional infrastructure
+* Economic security scales directly with total value locked — attacking the network requires acquiring proportional stake
+* Flexible entry — validators can participate at various capital levels
+* Capital efficiency — validators maximize returns from a single node without additional infrastructure
 
 **Cons:**
 
@@ -47,7 +71,7 @@ Every active validator earns an identical share of epoch rewards regardless of s
 * **Free-rider problem.** Validators can coast on minimal participation while collecting full rewards, degrading network quality without economic consequence.
 * **No economic differentiation across stake versions.** If governance adjusts the required stake over time, validators who committed more capital receive no acknowledgment of that higher commitment in their reward share.
 
-#### 3. Membership Model with Version-Weighted Rewards (Chosen Approach)
+#### 3. Membership Model with Version-Weighted Rewards (TN Solution)
 
 Validators stake a fixed amount determined by the current stake version to gain membership. Rewards are distributed based on the product of each validator's initial stake amount (from their version) and their consensus header count.
 
@@ -62,33 +86,9 @@ Validators stake a fixed amount determined by the current stake version to gain 
 
 **Cons:**
 
-* Mixed-version committees create unequal per-header reward rates, which may be perceived as unfair by validators on lower-stake versions
-* Validators cannot upgrade their version in-place -- they must fully exit, retire, and rejoin with a new identity, which involves downtime
-* The permissioned model (ConsensusNFT) means governance is a bottleneck for onboarding, which limits how quickly new nodes can be added even when operators are willing
-
-### Why This Approach
-
-#### More nodes, not bigger nodes
-
-The fundamental argument is about what economic behavior the staking model encourages.
-
-In a stake-weighted system, an operator with 1,000,000 TEL and a 100,000 TEL minimum stake has no reason to run 10 nodes. Running one node with 1,000,000 TEL staked produces the same (or better, after infrastructure savings) return. The network gets one node.
-
-In the membership model, that same operator can only stake 100,000 TEL per node. To deploy all their capital productively, they launch 10 validators -- each requiring governance approval, its own keys, its own infrastructure, and its own ConsensusNFT. The network gets 10 nodes. Each of those nodes independently produces consensus headers, serves the network, and strengthens its resilience against downtime and partitions.
-
-This is not a theoretical distinction. The validator set size directly determines the network's fault tolerance threshold, geographic distribution potential, and resistance to correlated failures. A network with 100 nodes operated by 20 entities is materially more robust than one with 20 nodes operated by 20 entities where some happen to have larger stakes.
-
-#### Performance-based differentiation
-
-Equal-weight models avoid the concentration problem but introduce a free-rider problem. The membership model solves both: the fixed stake prevents concentration, while the header-count weight rewards active participation. Validators who invest in reliable infrastructure, maintain high uptime, and stay current on protocol upgrades earn more -- not because they staked more, but because they contributed more.
-
-#### Version system as a governance lever
-
-The stake version system gives governance a tool to adjust the network's economics without hard forks. If the network needs to raise the barrier to entry (e.g., to increase economic security), governance increments the version with a higher stake amount. If it needs to lower barriers to accelerate growth, it can reduce the stake. Existing validators are not retroactively affected -- their initial commitment stands. This creates a stable, predictable environment for current operators while preserving flexibility for the network's future.
-
-#### Permissioned context
-
-Telcoin Network validators are mobile network operators vetted by governance. This is not an open-entry permissionless system where Sybil resistance must come purely from economic cost. The ConsensusNFT whitelist provides the Sybil resistance layer. The stake serves as an economic commitment and alignment mechanism, not as the sole defense against malicious actors. This context makes a fixed-stake membership model viable where it might not be in a permissionless setting.
+* Mixed-version committees create unequal per-header reward rates, which may be perceived as unfair by validators on lower-stake versions.
+* Validators cannot upgrade their version in-place. They must fully exit, retire, and rejoin with a new identity, which involves downtime.
+* The permissioned model (ConsensusNFT) means governance is a bottleneck for onboarding, which limits how quickly new nodes can be added even when operators are willing.
 
 ### Summary
 
